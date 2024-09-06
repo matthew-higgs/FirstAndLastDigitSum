@@ -1,4 +1,4 @@
-public class digitsum {
+public class Main {
     public static void main(String[] args) {
         System.out.println(sumFirstAndLastDigit(252));
         System.out.println(sumFirstAndLastDigit(257));
@@ -12,17 +12,19 @@ public class digitsum {
             return -1;
         }
 
-        //Get the last digit:  mod the number by 10:
-        // store in some variable
-
         int firstDigit = 0;
-        int lastDigit = 10;
+        int lastDigit = number % 10;
 
         // While number > 0
         // set firstDigit to number
         // divide equals number by 10
 
-        // return the sum of first and last digits
+        while (number > 0) {
+            firstDigit = number;
+            number /= 10;
+        }
 
+        // return the sum of first and last digits
+        return firstDigit + lastDigit;
     }
 }
